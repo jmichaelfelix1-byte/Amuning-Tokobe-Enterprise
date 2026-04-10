@@ -1,9 +1,15 @@
 FROM php:8.2-apache
 
+# Install MySQLi extension and other dependencies
+RUN docker-php-ext-install mysqli
+
+# Enable mysqli extension
+RUN docker-php-ext-enable mysqli
+
 # Copy project files into container
 COPY . /var/www/html/
 
-# Set the document root to the public folder (where your PHP files are)
+# Set the document root to the public folder
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public
 
 # Update Apache configuration to use the public folder
@@ -16,5 +22,8 @@ RUN a2enmod rewrite
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html
 
-# Enable error logging (helpful for debugging)
+# Enable error logging
 RUN echo "error_log = /var/log/apache2/php_errors.log" >> /usr/local/etc/php/conf.d/docker-php.ini
+
+# Display PHP info (optional - remove after testing)
+RUN echo "<?php phpinfo(); ?>" > /var/www/html/public/phpinfo.php
