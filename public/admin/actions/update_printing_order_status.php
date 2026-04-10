@@ -80,12 +80,13 @@ try {
     // For in-person payments: notify when status becomes 'completed' (ready for pickup)
     $should_notify = false;
     if ($status !== $old_status && $user_id) {
-        if ($payment_method === 'online' && $status === 'processing') {
+        if ($payment_method === 'online' && ($status === 'validated' || $status === 'processing')) {
             $should_notify = true;
-        } elseif ($payment_method === 'in_person' && $status === 'completed') {
+        } elseif ($payment_method === 'in_person' && ($status === 'processing' || $status === 'ready_to_pickup' || $status === 'completed')) {
             $should_notify = true;
         }
     }
+
 
     if ($should_notify) {
         $status_labels = [
