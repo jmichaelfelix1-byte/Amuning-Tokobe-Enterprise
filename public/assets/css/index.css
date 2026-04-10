@@ -1,0 +1,826 @@
+/* ============================================
+   INDEX / HOME PAGE STYLES
+   ============================================ */
+
+/* Services/Main Section */
+/* About Section */
+.about {
+    width: 100%;
+    padding: 5rem 2rem;
+    background: linear-gradient(rgba(5, 6, 12, 0.9) 0%, var(--background-deep) 100%);
+    text-align: center;
+    position: relative;
+}
+
+.about h1 {
+    font-size: 2.5rem;
+    font-family: 'MyCustomFont', sans-serif;
+    font-weight: bold;
+    color: var(--white);
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 6px rgba(5, 6, 12, 0.35);
+    position: relative;
+    display: inline-block;
+}
+
+.about h1::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(135deg, var(--main-color) 0%, var(--accent-color) 100%);
+    border-radius: 2px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    color: var(--light-white);
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.about a {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, var(--main-color) 0%, var(--main-color-dark) 100%);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(245, 39, 108, 0.3);
+    border: 2px solid transparent;
+}
+
+.about a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(245, 39, 108, 0.4);
+    background: linear-gradient(135deg, var(--main-color-dark) 0%, var(--main-color) 100%);
+}
+
+/* Image Slider Section */
+.box-container {
+    width: 100%;
+    height: 100vh;
+    max-height: 800px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--background-deep);
+    padding: 0;
+    margin: 0;
+}
+
+.hero-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    text-align: center;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+.motto {
+    color: var(--white);
+    font-family: 'MyCustomFont', sans-serif;
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+}
+
+.submotto {
+    color: var(--light-white);
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    line-height: 1.4;
+    max-width: 800px;
+    padding: 0 1rem;
+}
+
+.box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(50%) contrast(120%);
+    opacity: 0;
+    animation: gentleFade 28s infinite;
+    transition: opacity 1s ease-in-out;
+}
+
+.box img:nth-child(1) { animation-delay: 0s; }
+.box img:nth-child(2) { animation-delay: 4s; }
+.box img:nth-child(3) { animation-delay: 8s; }
+.box img:nth-child(4) { animation-delay: 12s; }
+.box img:nth-child(5) { animation-delay: 16s; }
+.box img:nth-child(6) { animation-delay: 20s; }
+.box img:nth-child(7) { animation-delay: 24s; }
+
+@keyframes gentleFade {
+    0%, 100% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 1;
+    }
+    45% {
+        opacity: 0;
+    }
+}
+
+/* Second Section */
+.gradbg {
+    background-image: url("../../../images/holdap.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    z-index: -1;
+    width: 100%;
+    min-height: 50vh;
+}
+
+.sec-box {
+    padding-top: 3%;
+    width: 100%;
+    min-height: 50vh;
+    background: linear-gradient(#ffefdb 95%, rgba(0, 0, 0, 0) 5%);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.abt {
+    color: black;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.abtsub1, .abtsub2, .abtsub3 {
+    color: black;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    text-align: center;
+    margin: 0.5rem 0;
+    width: 100%;
+    position: static;
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.abouthyper {
+    color: var(--white);
+    margin-top: 2rem;
+    border: 1px solid var(--main-color);
+    background-color: var(--main-color);
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    position: static;
+    margin-left: 0;
+}
+
+.abouthyper:hover {
+    color: var(--white);
+    background-color: var(--main-color-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 39, 108, 0.3);
+}
+
+/* Bento Grid Section */
+.bento-grid-container {
+    display: grid;
+    place-content: start center;
+    padding: 2rem 1rem;
+    background-color: var(--background-deep);
+    background: linear-gradient(rgba(5, 6, 12, 0.85) 10%, var(--background-deep) 90%);
+}
+
+.bento-grid-container * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.bento-grid-container img {
+    max-width: 100%;
+    display: block;
+}
+
+.bento-grid {
+    margin: 0.5rem;
+    max-width: 1080px;
+    display: grid;
+    grid-template-areas:
+        "item1 item1 item2 item2 item3"
+        "item1 item1 item2 item2 item9"
+        "item4 item4 item2 item2 item9"
+        "item5 item5 item8 item8 item9"
+        "item6 item7 item8 item8 item9";
+    grid-auto-columns: 1fr;
+    grid-template-rows: repeat(5, minmax(80px, 1fr));
+    gap: 0.5rem;
+    padding-bottom: 1rem;
+}
+
+.bento-grid .item {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    min-height: 80px;
+}
+
+.bento-grid .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    filter: grayscale(60%);
+    will-change: transform;
+}
+
+.bento-grid .item:hover img {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+.bento-grid .item p {
+    display: none;
+}
+
+/* Bento Grid Item Assignments */
+.bento-grid .item:nth-child(1) { grid-area: item1; }
+.bento-grid .item:nth-child(2) { grid-area: item2; }
+.bento-grid .item:nth-child(3) { grid-area: item3; }
+.bento-grid .item:nth-child(4) { grid-area: item4; }
+.bento-grid .item:nth-child(5) { grid-area: item5; }
+.bento-grid .item:nth-child(6) { grid-area: item6; }
+.bento-grid .item:nth-child(7) { grid-area: item7; }
+.bento-grid .item:nth-child(8) { grid-area: item8; }
+.bento-grid .item:nth-child(9) { grid-area: item9; }
+
+.bento-grid .item:nth-child(5) img {
+    object-position: bottom;
+}
+
+.bento-grid .item:nth-child(9) img {
+    object-position: center;
+}
+
+/* Gallery Carousel Section */
+.third-box {
+    width: 100%;
+    min-height: 50vh;
+    background-color: var(--background-deep);
+    padding: 2rem 0;
+    overflow: hidden;
+}
+
+.carousel {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    overflow-x: auto;
+    padding: 1.5rem 0;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1em;
+    animation: spin 40s infinite linear;
+    padding-right: 1em;
+}
+
+.card {
+    flex: 0 0 auto;
+    width: 300px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    font-size: 2.2rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: brightness(60%);
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.card:hover {
+    filter: brightness(90%);
+    transform: scale(1.02);
+}
+
+.card[style*="familee.jpg"]:hover {
+    background-image: url('../../../images/famileecolor.jpg') !important;
+}
+
+.card[style*="smayl.jpg"]:hover {
+    background-image: url('../../../images/smaylcolor.jpg') !important;
+}
+
+.card[style*="hug.jpg"]:hover {
+    background-image: url('../../../images/hugcolor.jpg') !important;
+}
+
+.card[style*="cool.jpg"]:hover {
+    background-image: url('../../../images/coolcolor.jpg') !important;
+}
+
+.card[style*="awesome.jpg"]:hover {
+    background-image: url('../../../images/awesomecolor.jpg') !important;
+}
+
+.card[style*="girlpeace.jpg"]:hover {
+    background-image: url('../../../images/girlpeacecolor.jpg') !important;
+}
+
+@keyframes spin {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* Contact Banner Section */
+.contact-banner {
+    position: relative;
+    height: 40vh;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 0;
+    background: linear-gradient(135deg, var(--background-deep) 0%, var(--main-color) 100%);
+}
+
+.contact-banner .banner-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--white);
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.contact-banner .banner-content h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: 1.5rem;
+    text-shadow: var(--text-shadow);
+    font-weight: 600;
+}
+
+.contact-banner .banner-content p {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    opacity: 0.9;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: var(--off-white);
+    padding: 6rem 2rem;
+}
+
+.contact-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+}
+
+.contact-info {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 3rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+/* Large Desktop (1600px and up) */
+@media (min-width: 1600px) {
+    .box-container {
+        max-height: 900px;
+    }
+    
+    .about {
+        padding: 6rem 3rem;
+    }
+    
+    .about h1 {
+        font-size: 3.5rem;
+    }
+    
+    .about p {
+        font-size: 1.4rem;
+    }
+    
+    .bento-grid {
+        max-width: 1200px;
+    }
+}
+
+/* Desktop (1200px - 1599px) */
+@media (max-width: 1200px) {
+    .box-container {
+        height: 70vh;
+        max-height: 700px;
+    }
+    
+    .bento-grid {
+        grid-template-areas:
+            "item1 item1 item2 item2"
+            "item1 item1 item2 item2"
+            "item4 item4 item2 item2"
+            "item5 item5 item8 item8"
+            "item6 item7 item8 item8"
+            "item9 item9 item9 item9";
+        grid-template-rows: repeat(6, minmax(80px, 1fr));
+    }
+    
+    .bento-grid .item:nth-child(3) {
+        display: none;
+    }
+}
+
+/* Tablet (768px - 1199px) */
+@media (max-width: 1024px) {
+    .box-container {
+        height: 60vh;
+        max-height: 600px;
+    }
+    
+    .about {
+        padding: 4rem 2rem;
+    }
+    
+    .about h1 {
+        font-size: 2.2rem;
+    }
+    
+    .about p {
+        font-size: 1.1rem;
+    }
+    
+    .sec-box {
+        min-height: 40vh;
+        padding: 2rem 1rem;
+    }
+    
+    .bento-grid {
+        grid-template-areas:
+            "item1 item1 item2 item2"
+            "item1 item1 item2 item2"
+            "item4 item4 item8 item8"
+            "item5 item5 item8 item8"
+            "item6 item7 item9 item9";
+        grid-template-rows: repeat(5, minmax(80px, 1fr));
+        gap: 0.4rem;
+    }
+    
+    .bento-grid .item:nth-child(3) {
+        display: none;
+    }
+    
+    .card {
+        width: 250px;
+        height: 350px;
+    }
+    
+    .contact-banner {
+        height: 35vh;
+        min-height: 250px;
+    }
+}
+
+/* Mobile (576px - 767px) */
+@media (max-width: 768px) {
+    .box-container {
+        height: 50vh;
+        max-height: 500px;
+    }
+    
+    .about {
+        padding: 3rem 1.5rem;
+    }
+    
+    .about h1 {
+        font-size: 2rem;
+    }
+    
+    .about h1::after {
+        width: 80px;
+        height: 3px;
+        bottom: -12px;
+    }
+    
+    .about p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 2rem;
+    }
+    
+    .about a {
+        padding: 0.8rem 2rem;
+        font-size: 0.9rem;
+    }
+    
+    .motto {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        margin-bottom: 0.8rem;
+    }
+    
+    .submotto {
+        font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    }
+    
+    .sec-box {
+        min-height: 35vh;
+        padding: 1.5rem 1rem;
+    }
+    
+    .abt {
+        font-size: 1.5rem;
+    }
+    
+    .abtsub1, .abtsub2, .abtsub3 {
+        font-size: 1rem;
+    }
+    
+    .abouthyper {
+        padding: 0.7rem 1.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .bento-grid {
+        grid-template-areas:
+            "item1 item1"
+            "item1 item1"
+            "item2 item2"
+            "item2 item2"
+            "item4 item4"
+            "item5 item5"
+            "item6 item7"
+            "item8 item8"
+            "item9 item9";
+        grid-template-rows: repeat(9, minmax(80px, 1fr));
+        gap: 0.3rem;
+        margin: 0.25rem;
+    }
+    
+    .bento-grid .item:nth-child(3) {
+        display: none;
+    }
+    
+    .third-box {
+        min-height: 40vh;
+        padding: 1.5rem 0;
+    }
+    
+    .carousel {
+        width: 95%;
+        padding: 1rem 0;
+    }
+    
+    .card {
+        width: 200px;
+        height: 280px;
+        font-size: 1.8rem;
+    }
+    
+    .contact-banner {
+        height: 30vh;
+        min-height: 200px;
+    }
+    
+    .contact-section {
+        padding: 4rem 1.5rem;
+    }
+    
+    .contact-info {
+        padding: 2rem;
+    }
+}
+
+/* Small Mobile (575px and below) */
+@media (max-width: 576px) {
+    .box-container {
+        height: 40vh;
+        max-height: 400px;
+    }
+    
+    .about {
+        padding: 2.5rem 1rem;
+    }
+    
+    .about h1 {
+        font-size: 1.8rem;
+    }
+    
+    .about p {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .about a {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.8rem;
+    }
+    
+    .hero-text {
+        padding: 0 1rem;
+    }
+    
+    .motto {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .submotto {
+        font-size: 0.9rem;
+    }
+    
+    .sec-box {
+        min-height: 30vh;
+        padding: 1rem;
+    }
+    
+    .abt {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .abtsub1, .abtsub2, .abtsub3 {
+        font-size: 0.9rem;
+        margin: 0.3rem 0;
+    }
+    
+    .abouthyper {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.8rem;
+        margin-top: 1rem;
+    }
+    
+    .bento-grid-container {
+        padding: 1rem 0.5rem;
+    }
+    
+    .bento-grid {
+        grid-template-areas:
+            "item1"
+            "item2"
+            "item4"
+            "item5"
+            "item6"
+            "item7"
+            "item8"
+            "item9";
+        grid-template-rows: repeat(8, minmax(100px, 1fr));
+        gap: 0.25rem;
+        margin: 0.1rem;
+    }
+    
+    .bento-grid .item:nth-child(3) {
+        display: none;
+    }
+    
+    .third-box {
+        min-height: 35vh;
+        padding: 1rem 0;
+    }
+    
+    .card {
+        width: 180px;
+        height: 240px;
+        font-size: 1.5rem;
+    }
+    
+    .group {
+        animation: spin 30s infinite linear;
+    }
+    
+    .contact-banner {
+        height: 25vh;
+        min-height: 180px;
+    }
+    
+    .contact-banner .banner-content h1 {
+        margin-bottom: 1rem;
+    }
+    
+    .contact-section {
+        padding: 3rem 1rem;
+    }
+    
+    .contact-info {
+        padding: 1.5rem;
+    }
+}
+
+/* Extra Small Mobile (375px and below) */
+@media (max-width: 375px) {
+    .box-container {
+        height: 35vh;
+        max-height: 350px;
+    }
+    
+    .about {
+        padding: 2rem 0.5rem;
+    }
+    
+    .about h1 {
+        font-size: 1.5rem;
+    }
+    
+    .about p {
+        font-size: 0.85rem;
+    }
+    
+    .motto {
+        font-size: 1.1rem;
+    }
+    
+    .submotto {
+        font-size: 0.8rem;
+    }
+    
+    .sec-box {
+        min-height: 25vh;
+    }
+    
+    .abt {
+        font-size: 1.1rem;
+    }
+    
+    .abtsub1, .abtsub2, .abtsub3 {
+        font-size: 0.8rem;
+    }
+    
+    .card {
+        width: 160px;
+        height: 220px;
+    }
+    
+    .contact-banner {
+        height: 22vh;
+        min-height: 160px;
+    }
+}

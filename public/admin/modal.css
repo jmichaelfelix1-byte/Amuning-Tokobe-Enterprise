@@ -1,0 +1,412 @@
+/* Modal Styles - Reusable across all admin pages */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    animation: fadeIn 0.3s ease-out;
+    /* Ensure modal covers full viewport */
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height for mobile */
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: slideIn 0.3s ease-out;
+    position: relative;
+    /* Prevent modal from being too tall on small screens */
+    max-height: 90vh;
+    max-height: 90dvh;
+    overflow-y: auto;
+}
+
+.modal-body {
+    padding: 25px;
+    /* Ensure content is scrollable if too tall */
+    overflow-y: auto;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    border-bottom: 1px solid #eee;
+    background: linear-gradient(135deg, #F5276C, #FF8C42);
+    color: white;
+    border-radius: 12px 12px 0 0;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.close-modal:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #374151;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 10px 12px;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:disabled,
+.form-group select:disabled,
+.form-group textarea:disabled {
+    background-color: #f3f4f6;
+    color: #6b7280;
+    cursor: not-allowed;
+    border-color: #d1d5db;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #F5276C;
+    box-shadow: 0 0 0 3px rgba(245, 39, 108, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-hint {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 20px 25px;
+    border-top: 1px solid #eee;
+    background: #f9fafb;
+    border-radius: 0 0 12px 12px;
+}
+
+.btn-secondary {
+    background: #6b7280;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #4b5563;
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #F5276C, #FF8C42);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #e02261, #ff7a3a);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(245, 39, 108, 0.3);
+}
+
+/* Responsive Design - Comprehensive for all devices */
+
+/* Extra Large Desktops */
+@media (min-width: 1400px) {
+    .modal-content {
+        max-width: 700px;
+        margin: 3% auto;
+    }
+}
+
+/* Large Desktops */
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .modal-content {
+        max-width: 650px;
+    }
+}
+
+/* Standard Desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .modal-content {
+        max-width: 600px;
+    }
+}
+
+/* Small Desktops & Large Tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+    .modal-content {
+        max-width: 550px;
+        margin: 8% auto;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
+
+/* Tablets & Small Devices */
+@media (min-width: 576px) and (max-width: 767px) {
+    .modal-content {
+        width: 95%;
+        max-width: 500px;
+        margin: 10% auto;
+        max-height: 85vh;
+        max-height: 85dvh;
+    }
+
+    .modal-body {
+        padding: 20px;
+    }
+
+    .modal-header {
+        padding: 15px 20px;
+    }
+
+    .modal-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .modal-actions {
+        padding: 15px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px;
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 575px) {
+    .modal-content {
+        width: 98%;
+        margin: 5% auto;
+        max-height: 95vh;
+        max-height: 95dvh;
+        border-radius: 8px;
+    }
+
+    .modal-body {
+        padding: 15px;
+    }
+
+    .modal-header {
+        padding: 12px 15px;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .modal-header h3 {
+        font-size: 1rem;
+    }
+
+    .close-modal {
+        font-size: 24px;
+        width: 28px;
+        height: 28px;
+    }
+
+    .modal-actions {
+        padding: 12px 15px;
+        flex-direction: column;
+        gap: 8px;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+
+    .form-group label {
+        font-size: 0.85rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 10px;
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+
+    .form-hint {
+        font-size: 0.75rem;
+    }
+}
+
+/* Orientation-specific adjustments */
+
+/* Portrait orientation for tall screens */
+@media screen and (orientation: portrait) and (max-height: 600px) {
+    .modal-content {
+        margin: 2% auto;
+        max-height: 96vh;
+        max-height: 96dvh;
+    }
+
+    .modal-body {
+        padding: 15px;
+        max-height: calc(96vh - 120px);
+        max-height: calc(96dvh - 120px);
+    }
+}
+
+/* Landscape orientation for wide screens */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    .modal-content {
+        margin: 1% auto;
+        max-height: 98vh;
+        max-height: 98dvh;
+    }
+
+    .modal-body {
+        padding: 15px;
+        max-height: calc(98vh - 100px);
+        max-height: calc(98dvh - 100px);
+    }
+
+    .modal-header {
+        padding: 10px 15px;
+    }
+
+    .modal-header h3 {
+        font-size: 1rem;
+    }
+
+    .modal-actions {
+        padding: 10px 15px;
+    }
+
+    .form-row {
+        gap: 8px;
+    }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1920px) {
+    .modal-content {
+        max-width: 800px;
+        margin: 2% auto;
+    }
+}
+
+/* Touch devices - ensure buttons are touch-friendly */
+@media (hover: none) and (pointer: coarse) {
+    .close-modal,
+    .btn-primary,
+    .btn-secondary {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        min-height: 44px;
+    }
+}
+
+/* High DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .modal-content {
+        box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    }
+}
+
+/* Print styles - hide modal when printing */
+@media print {
+    .modal {
+        display: none !important;
+    }
+}

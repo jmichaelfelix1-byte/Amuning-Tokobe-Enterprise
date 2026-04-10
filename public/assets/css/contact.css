@@ -1,0 +1,350 @@
+/* ============================================
+   CONTACT PAGE STYLES
+   ============================================ */
+
+/* Contact Banner */
+.contact-banner {
+    position: relative;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 0;
+    background: linear-gradient(135deg, var(--background-deep) 0%, var(--main-color) 100%);
+}
+
+.contact-banner .banner-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--white);
+    max-width: 800px;
+}
+
+.contact-banner .banner-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: var(--white);
+}
+
+.contact-banner .banner-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    color: var(--light-white);
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 5rem 2rem;
+    background: var(--background-deep);
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    text-align: center;
+}
+
+.info-header h2 {
+    font-size: 2.5rem;
+    color: var(--white);
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+}
+
+.info-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(135deg, var(--main-color) 0%, var(--accent-color) 100%);
+    border-radius: 2px;
+}
+
+/* Info Cards */
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.info-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(245, 39, 108, 0.15);
+    border: 1px solid rgba(245, 39, 108, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, var(--main-color) 0%, var(--accent-color) 100%);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(245, 39, 108, 0.25);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--main-color) 0%, var(--accent-color) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.5rem;
+    color: white;
+    box-shadow: 0 4px 15px rgba(245, 39, 108, 0.3);
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    color: var(--black);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.card-content p {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Map Section */
+.map-section {
+    padding: 5rem 2rem;
+    background: var(--background-deep);
+}
+
+.map-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.map-header h2 {
+    font-size: 2.5rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.map-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(135deg, var(--main-color) 0%, var(--accent-color) 100%);
+    border-radius: 2px;
+}
+
+.map-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(245, 39, 108, 0.2);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+    .contact-banner .banner-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .info-header h2,
+    .map-header h2 {
+        font-size: 2rem;
+    }
+
+    .info-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .info-card {
+        padding: 1.5rem;
+    }
+
+    .card-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .contact-banner {
+        height: 35vh;
+    }
+
+    .contact-banner .banner-content h1 {
+        font-size: 2rem;
+    }
+
+    .contact-banner .banner-content p {
+        font-size: 1rem;
+    }
+
+    .contact-section,
+    .map-section {
+        padding: 3rem 1rem;
+    }
+
+    .info-header h2,
+    .map-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .info-header h2::after,
+    .map-header h2::after {
+        width: 60px;
+        height: 2px;
+    }
+
+    .info-card {
+        padding: 1.5rem;
+    }
+
+    .card-content h3 {
+        font-size: 1.3rem;
+    }
+
+    .card-content p {
+        font-size: 1rem;
+    }
+
+    .map-container iframe {
+        height: 300px;
+    }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+    .contact-banner {
+        height: 30vh;
+    }
+
+    .contact-banner .banner-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .contact-banner .banner-content p {
+        font-size: 0.9rem;
+    }
+
+    .contact-section,
+    .map-section {
+        padding: 2rem 1rem;
+    }
+
+    .info-header h2,
+    .map-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .info-card {
+        padding: 1rem;
+    }
+
+    .card-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .card-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .card-content p {
+        font-size: 0.95rem;
+    }
+
+    .map-container iframe {
+        height: 250px;
+    }
+}
+
+/* ============================================
+   ANIMATIONS & EFFECTS
+   ============================================ */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.info-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.info-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.info-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.info-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* Hover Effects */
+.info-card:hover .card-icon {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Focus States for Accessibility */
+.info-card:focus-within {
+    outline: 2px solid var(--main-color);
+    outline-offset: 2px;
+}

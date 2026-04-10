@@ -1,0 +1,295 @@
+footer {
+    padding: 5% 0;
+    margin: 0;
+    background-color: black;
+    color: white;
+    width: 100%; 
+    box-sizing: border-box; 
+    position: relative; 
+}
+
+.footer h1, .footer p {
+    color: white;
+    margin: 0;
+    font-weight: 700;
+}
+
+.button-footer {
+    color: white;
+}
+
+footer p {
+    font-size: 11px;
+}   
+
+.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button-link:hover {
+    background-color: #F5276C;
+    color: black;
+    text-decoration: none;
+}
+
+.button-footer {
+    display: inline-flexbox;
+    padding: 8px 25px;
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 14px;
+    border-radius: 25px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button-footer:hover {
+    background-color: #F5276C;
+    color: white;
+    text-decoration: none;
+}
+
+.col{
+    margin: 20px 0px;
+    width: 25%;
+}
+.col .social{
+    width: 100px;
+    display: inline-flex;
+    align-items: right;
+    justify-content: center;
+     gap: 20px;
+}
+.col .social a{
+    height: 35px;
+    width: 35px;
+    background: var(--main-color);
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    transition: .4s;
+}
+
+.col .social a:hover{
+    color: var(--main-color);
+    background-color: white;
+    transform: scale(1.2);
+}
+
+/* ============================================
+   RESPONSIVE FOOTER STYLES
+   ============================================ */
+
+/* Large screens (1200px and up) */
+@media (min-width: 1200px) {
+    footer {
+        padding: 6% 0;
+    }
+    
+    .footer h1 {
+        font-size: 1.8rem;
+    }
+    
+    .col .social {
+        width: 320px;
+    }
+    
+    .col .social a {
+        height: 40px;
+        width: 40px;
+        font-size: 1.3rem;
+    }
+    
+    .button-footer {
+        padding: 10px 30px;
+        font-size: 15px;
+    }
+}
+
+/* Medium screens (768px - 1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .col {
+        width: 35%;
+        margin: 25px 0;
+    }
+    
+    .col .social {
+        width: 250px;
+    }
+    
+    .col .social a {
+        height: 35px;
+        width: 35px;
+        font-size: 1.2rem;
+    }
+    
+    .button-footer {
+        padding: 8px 22px;
+        font-size: 13px;
+    }
+    
+    .footer h1 {
+        font-size: 1.6rem;
+    }
+    
+    footer p {
+        font-size: 11px;
+    }
+}
+
+/* Small screens (480px - 767px) */
+@media (max-width: 767px) and (min-width: 480px) {
+    footer {
+        padding: 8% 0;
+        text-align: center;
+    }
+    
+    .footer h1 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+    
+    footer p {
+        font-size: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .col {
+        width: 100%;
+        margin: 20px 0;
+        text-align: center;
+    }
+    
+    .col .social {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    
+    .col .social a {
+        height: 40px;
+        width: 40px;
+        font-size: 1.5rem;
+        margin: 5px;
+    }
+    
+    .button-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 25px;
+    }
+    
+    .button-footer {
+        padding: 6px 15px;
+        font-size: 11px;
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+}
+
+/* Extra small screens (320px - 479px) */
+@media (max-width: 479px) {
+    footer {
+        padding: 10% 0;
+        text-align: center;
+    }
+    
+    .footer h1 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+    
+    footer p {
+        font-size: 9px;
+        margin-bottom: 15px;
+        padding: 0 10px;
+    }
+    
+    .col {
+        width: 100%;
+        margin: 15px 0;
+        text-align: center;
+    }
+    
+    .col .social {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+    
+    .col .social a {
+        height: 35px;
+        width: 35px;
+        font-size: 1.3rem;
+        margin: 3px;
+    }
+    
+    .button-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        margin-top: 20px;
+        padding: 0 15px;
+    }
+    
+    .button-footer {
+        padding: 5px 10px;
+        font-size: 10px;
+        text-align: center;
+        border-radius: 20px;
+    }
+}
+
+/* Very small screens (under 320px) */
+@media (max-width: 319px) {
+    footer {
+        padding: 12% 0;
+    }
+    
+    .footer h1 {
+        font-size: 1.1rem;
+    }
+    
+    footer p {
+        font-size: 8px;
+    }
+    
+    .col .social {
+        max-width: 200px;
+        gap: 8px;
+    }
+    
+    .col .social a {
+        height: 30px;
+        width: 30px;
+        font-size: 1.1rem;
+    }
+    
+    .button-container {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 0 10px;
+    }
+    
+    .button-footer {
+        padding: 4px 8px;
+        font-size: 9px;
+    }
+}
