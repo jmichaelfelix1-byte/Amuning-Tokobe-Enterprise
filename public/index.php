@@ -23,13 +23,13 @@ include 'includes/header.php'; ?>
                         <a>Bring your celebrations to life with our photobooth and printing services</a>
                     </div>
                 </div>
-                <img src="..\images\mod.jpg" alt="image" class="show" width="100%" height="25%">
-                <img src="..\images\fivegirls.jpg" alt="image"  width="100%" height="25%">
-                <img src="..\images\foursisters.jpg" alt="image" width="100%" height="25%">
-                <img src="..\images\por.jpg" alt="image"  width="100%" height="25%">
-                <img src="..\images\str8.jpg" alt="image"  width="100%" height="25%">
-                <img src="..\images\blackpink.jpg" alt="image"  width="100%" height="25%">
-                <img src="..\images\3self.jpg" alt="image"  width="100%" height="25%">
+                <img src="../images/mod.jpg" alt="image" class="show" width="100%" height="25%">
+                <img src="../images/ivegirls.jpg" alt="image"  width="100%" height="25%">
+                <img src="../images/foursisters.jpg" alt="image" width="100%" height="25%">
+                <img src="../images/por.jpg" alt="image"  width="100%" height="25%">
+                <img src="../images/str8.jpg" alt="image"  width="100%" height="25%">
+                <img src="../images/blackpink.jpg" alt="image"  width="100%" height="25%">
+                <img src="../images/3self.jpg" alt="image"  width="100%" height="25%">
             </div>
         </div>
 
@@ -46,47 +46,47 @@ include 'includes/header.php'; ?>
                 <div class="bento-grid">
                     <div class="item">
                         <p>test</p>
-                        <img src="..\images\papertexture.avif"
+                        <img src="../images/papertexture.avif"
                         alt="">
                     </div>
                     <div class="item">
                         <p>test</p>
-                        <img src="..\images\browncamjpg.jpg"
+                        <img src="../images/browncamjpg.jpg"
                         alt="">
                     </div>
                     <div class="item">
                         <p>test</p>
-                        <img src="..\images\beptex.jpg"
+                        <img src="../images/beptex.jpg"
                         alt="">
                     </div>
                     <div class="item">
                         <p>test</p>
-                        <img src="..\images\printer.jpg"
+                        <img src="../images/printer.jpg"
                         alt="">
                     </div>
                     <div class="item">
                         <p>test</p>
-                        <img src="..\images\printerb.jpg"
+                        <img src="../images/printerb.jpg"
                         alt="">
                     </div>
                     <div class="item">
                         <p>test</p>
-                        <img src="..\images\pbtexture.jpg"
+                        <img src="../images/pbtexture.jpg"
                         alt="">
                     </div>
                     <div class="item">
                         <p>test</p>
-                        <img src="..\images\browncam2.webp"
+                        <img src="../images/browncam2.webp"
                         alt="">
                     </div>
                     <div class="item">
                         <p>test</p>
-                        <img src="..\images\brownphotob.jpg"
+                        <img src="../images/brownphotob.jpg"
                         alt="">
                     </div>
                     <div class="item">
                         <p>test</p>
-                        <img src="..\images\bptexture.jpg"
+                        <img src="../images/bptexture.jpg"
                         alt="">
                     </div>
                 </div>
