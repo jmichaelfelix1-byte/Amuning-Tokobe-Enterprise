@@ -1,7 +1,7 @@
 <?php
 // Google OAuth Configuration
-define('GOOGLE_CLIENT_ID', '765395085085-4qok9ltliuvnuqfus56of2jj9592tb6o.apps.googleusercontent.com');
-define('GOOGLE_CLIENT_SECRET', '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');
+define('GOOGLE_CLIENT_ID', '497276011851-0289o7mu4tocr5k2frpes1955rpkedc8.apps.googleusercontent.com');
+define('GOOGLE_CLIENT_SECRET', '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');
 
 // Hardcoded for Render deployment
 define('GOOGLE_REDIRECT_URI', 'https://amuning-tokobe-enterprise.onrender.com/google_auth.php');
