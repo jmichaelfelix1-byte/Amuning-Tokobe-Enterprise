@@ -8,6 +8,9 @@ $protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ? 'https://
 $domain = $_SERVER['HTTP_HOST'];
 define('GOOGLE_REDIRECT_URI', $protocol . $domain . '/Amuning/public/google_auth.php');
 
+// DEBUG: See what URI is being generated
+error_log('Generated Redirect URI: ' . GOOGLE_REDIRECT_URI);
+
 // Include Google API Client
 require_once __DIR__ . '../../../google_login/vendor/autoload.php';
 
