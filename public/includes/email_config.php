@@ -1,12 +1,20 @@
 <?php
 /**
  * Email Configuration and PHPMailer Setup
- * Contains PHPMailer initialization and shared email configuration
+ * Credentials loaded from environment variables
  */
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+
+// Load environment variables
+if (file_exists(dirname(dirname(dirname(__FILE__))) . '/.env')) {
+    $env = parse_ini_file(dirname(dirname(dirname(__FILE__))) . '/.env');
+    foreach ($env as $key => $value) {
+        putenv("$key=$value");
+    }
+}
 
 // Include PHPMailer classes with error handling
 $baseDir = dirname(dirname(dirname(__FILE__)));
@@ -15,24 +23,21 @@ $vendorPath = $baseDir . '/send_email/vendor/autoload.php';
 if (file_exists($vendorPath)) {
     try {
         require_once $vendorPath;
-        // Check if PHPMailer class exists
         if (!class_exists('PHPMailer\PHPMailer\PHPMailer')) {
             throw new Exception('PHPMailer class not found after autoload');
         }
     } catch (Exception $e) {
-        // Define dummy functions if PHPMailer fails to load
         function sendPhotoPaymentPendingEmail($email, $name, $details) {
-            return ['success' => false, 'message' => 'Email system unavailable: ' . $e->getMessage()];
+            return ['success' => false, 'message' => 'Email system unavailable'];
         }
         function sendOrderConfirmationEmail($email, $name, $details) {
-            return ['success' => false, 'message' => 'Email system unavailable: ' . $e->getMessage()];
+            return ['success' => false, 'message' => 'Email system unavailable'];
         }
         function sendPhotoBookingReceivedEmail($email, $name, $details) {
-            return ['success' => false, 'message' => 'Email system unavailable: ' . $e->getMessage()];
+            return ['success' => false, 'message' => 'Email system unavailable'];
         }
     }
 } else {
-    // Define dummy functions if vendor path doesn't exist
     function sendPhotoPaymentPendingEmail($email, $name, $details) {
         return ['success' => false, 'message' => 'Email system not configured'];
     }
@@ -54,16 +59,26 @@ function createMailer() {
 
     $mail = new PHPMailer(true);
 
+    // Get credentials from environment variables
+    $gmailUser = getenv('GMAIL_USERNAME');
+    $gmailPass = getenv('GMAIL_PASSWORD');
+
+    if (!$gmailUser || !$gmailPass) {
+        error_log("Error: Gmail credentials not configured in environment variables");
+        return null;
+    }
+
+    // Server settings
     $mail->isSMTP();
     $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'amuningtokobeenterprise@gmail.com';
-    $mail->Password   = 'dlbz cynr pkfv rpfo';
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Change to STARTTLS (port 587)
+    $mail->Username   = $gmailUser;
+    $mail->Password   = $gmailPass;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
     $mail->Timeout    = 5;
-    
-    // Fix SSL certificate issues after Docker rebuild
+
+    // SSL options
     $mail->SMTPOptions = array(
         'ssl' => array(
             'verify_peer'       => true,
@@ -72,7 +87,9 @@ function createMailer() {
         )
     );
 
-    $mail->setFrom('amuningtokobeenterprise@gmail.com', 'Amuning Tokobe Enterprise');
+    // Default sender
+    $mail->setFrom($gmailUser, 'Amuning Tokobe Enterprise');
 
     return $mail;
 }
+?>
