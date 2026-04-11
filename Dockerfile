@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip \
     libssl-dev \
+    git \
     && docker-php-ext-install \
     mysqli \
     zip \
@@ -15,8 +16,15 @@ RUN apt-get update && apt-get install -y \
 RUN docker-php-ext-enable mysqli zip
 RUN echo "phar.readonly = 0" >> /usr/local/etc/php/conf.d/phar.ini
 
+# Install Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
 # Copy project files
 COPY . /var/www/html/
+
+# Install PHP dependencies (Google Client Library, PHPMailer, etc.)
+WORKDIR /var/www/html/send_email
+RUN composer install --no-dev --optimize-autoloader
 
 # Set document root to public
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public
