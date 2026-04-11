@@ -59,7 +59,7 @@ function createMailer() {
     $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
     $mail->Username   = 'amuningtokobeenterprise@gmail.com';
-    $mail->Password   = 'gdnj anws biqh qdji';
+    $mail->Password   = 'dlbz cynr pkfv rpfo';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Use SMTPS instead of STARTTLS
     $mail->Port       = 465; // Use port 465 instead of 587
 
