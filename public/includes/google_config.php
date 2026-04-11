@@ -6,8 +6,8 @@ define('GOOGLE_CLIENT_SECRET', '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');
 // Hardcoded for Render deployment
 define('GOOGLE_REDIRECT_URI', 'https://amuning-tokobe-enterprise.onrender.com/google_auth.php');
 
-// Include Google API Client - FIXED PATH
-require_once __DIR__ . '../../google_login/vendor/autoload.php';
+// Include Google API Client - use absolute path from root
+require_once dirname(__DIR__, 2) . '/google_login/vendor/autoload.php';
 
 $client = new Google_Client();
 $client->setClientId(GOOGLE_CLIENT_ID);
