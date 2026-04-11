@@ -5,12 +5,12 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     zip \
     unzip \
+    libssl-dev \
     && docker-php-ext-install \
     mysqli \
     zip \
     pdo \
-    pdo_mysql \
-    openssl  # ← ADD THIS
+    pdo_mysql
 
 RUN docker-php-ext-enable mysqli zip
 RUN echo "phar.readonly = 0" >> /usr/local/etc/php/conf.d/phar.ini
@@ -35,4 +35,4 @@ RUN chown -R www-data:www-data /var/www/html
 RUN echo "error_log = /var/log/apache2/php_errors.log" >> /usr/local/etc/php/conf.d/docker-php.ini
 RUN echo "memory_limit = 256M" >> /usr/local/etc/php/conf.d/memory.ini
 RUN echo "max_execution_time = 300" >> /usr/local/etc/php/conf.d/timeout.ini
-RUN echo "default_socket_timeout = 10" >> /usr/local/etc/php/conf.d/timeout.ini  # ← ADD THIS
+RUN echo "default_socket_timeout = 10" >> /usr/local/etc/php/conf.d/timeout.ini
