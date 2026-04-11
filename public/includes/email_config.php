@@ -54,25 +54,24 @@ function createMailer() {
 
     $mail = new PHPMailer(true);
 
-    // Server settings - Try SSL on port 465 (alternative to TLS on 587)
     $mail->isSMTP();
     $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
     $mail->Username   = 'amuningtokobeenterprise@gmail.com';
     $mail->Password   = 'dlbz cynr pkfv rpfo';
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Use SMTPS instead of STARTTLS
-    $mail->Port       = 465; // Use port 465 instead of 587
-
-    // Additional SSL options
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Change to STARTTLS (port 587)
+    $mail->Port       = 587;
+    $mail->Timeout    = 5;
+    
+    // Fix SSL certificate issues after Docker rebuild
     $mail->SMTPOptions = array(
         'ssl' => array(
-            'verify_peer' => false,
-            'verify_peer_name' => false,
-            'allow_self_signed' => true
+            'verify_peer'       => true,
+            'verify_peer_name'  => true,
+            'allow_self_signed' => false
         )
     );
 
-    // Default sender
     $mail->setFrom('amuningtokobeenterprise@gmail.com', 'Amuning Tokobe Enterprise');
 
     return $mail;
