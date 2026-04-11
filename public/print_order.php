@@ -322,7 +322,7 @@ if (!$stmt) {
     exit();
 }
 
-$binding = $stmt->bind_param("issssssiddssss", $userId, $fullName, $contactNumber, $service, $size, $paperType, $colorType, $quantity, $totalPages, $finalPrice, $imagePathsJson, $specialInstructions, $pageCountsJson, $paymentMethod);
+$binding = $stmt->bind_param("issssssiidssss", $userId, $fullName, $contactNumber, $service, $size, $paperType, $colorType, $quantity, $totalPages, $finalPrice, $imagePathsJson, $specialInstructions, $pageCountsJson, $paymentMethod);
 if (!$binding) {
     error_log("Database bind_param error: " . $stmt->error);
     header('Location: print.php?message=order_failed');
