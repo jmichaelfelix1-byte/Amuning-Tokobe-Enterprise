@@ -4,7 +4,7 @@
  * Generates PDF receipts/invoices for orders and bookings
  */
 
-require_once __DIR__ . '/../send_email/vendor/autoload.php';
+require_once __DIR__ . '/../../send_email/vendor/autoload.php';
 
 /**
  * Generate Order Receipt PDF
