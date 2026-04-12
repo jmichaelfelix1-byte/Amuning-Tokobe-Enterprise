@@ -18,7 +18,7 @@ if (file_exists(dirname(dirname(dirname(__FILE__))) . '/.env')) {
 
 // Include PHPMailer classes with error handling
 $baseDir = dirname(dirname(dirname(__FILE__)));
-$vendorPath = $baseDir . '/send_email/vendor/autoload.php';
+$vendorPath = $baseDir . '/../send_email/vendor/autoload.php';
 
 if (file_exists($vendorPath)) {
     try {
