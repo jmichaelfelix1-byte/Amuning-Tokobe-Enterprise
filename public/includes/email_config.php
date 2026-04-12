@@ -27,25 +27,39 @@ if (file_exists($vendorPath)) {
             throw new Exception('PHPMailer class not found after autoload');
         }
     } catch (Exception $e) {
-        function sendPhotoPaymentPendingEmail($email, $name, $details) {
-            return ['success' => false, 'message' => 'Email system unavailable'];
+        // PHPMailer loading failed - define stub functions
+        if (!function_exists('sendPhotoPaymentPendingEmail')) {
+            function sendPhotoPaymentPendingEmail($email, $name, $details) {
+                return ['success' => false, 'message' => 'Email system unavailable'];
+            }
         }
-        function sendOrderConfirmationEmail($email, $name, $details) {
-            return ['success' => false, 'message' => 'Email system unavailable'];
+        if (!function_exists('sendOrderConfirmationEmail')) {
+            function sendOrderConfirmationEmail($email, $name, $details) {
+                return ['success' => false, 'message' => 'Email system unavailable'];
+            }
         }
-        function sendPhotoBookingReceivedEmail($email, $name, $details) {
-            return ['success' => false, 'message' => 'Email system unavailable'];
+        if (!function_exists('sendPhotoBookingReceivedEmail')) {
+            function sendPhotoBookingReceivedEmail($email, $name, $details) {
+                return ['success' => false, 'message' => 'Email system unavailable'];
+            }
         }
     }
 } else {
-    function sendPhotoPaymentPendingEmail($email, $name, $details) {
-        return ['success' => false, 'message' => 'Email system not configured'];
+    // PHPMailer path doesn't exist - define stub functions
+    if (!function_exists('sendPhotoPaymentPendingEmail')) {
+        function sendPhotoPaymentPendingEmail($email, $name, $details) {
+            return ['success' => false, 'message' => 'Email system not configured'];
+        }
     }
-    function sendOrderConfirmationEmail($email, $name, $details) {
-        return ['success' => false, 'message' => 'Email system not configured'];
+    if (!function_exists('sendOrderConfirmationEmail')) {
+        function sendOrderConfirmationEmail($email, $name, $details) {
+            return ['success' => false, 'message' => 'Email system not configured'];
+        }
     }
-    function sendPhotoBookingReceivedEmail($email, $name, $details) {
-        return ['success' => false, 'message' => 'Email system not configured'];
+    if (!function_exists('sendPhotoBookingReceivedEmail')) {
+        function sendPhotoBookingReceivedEmail($email, $name, $details) {
+            return ['success' => false, 'message' => 'Email system not configured'];
+        }
     }
 }
 
