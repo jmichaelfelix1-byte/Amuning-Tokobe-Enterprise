@@ -24,7 +24,7 @@ COPY . /var/www/html/
 
 # Install PHP dependencies (Google Client Library, PHPMailer, etc.)
 WORKDIR /var/www/html/send_email
-RUN composer install --no-dev --optimize-autoloader
+RUN composer install --no-dev --optimize-autoloader --prefer-dist
 
 # Set document root to public
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public
