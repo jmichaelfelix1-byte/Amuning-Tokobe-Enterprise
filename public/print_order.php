@@ -316,7 +316,7 @@ error_log("pageCountsJson (what will be stored): " . $pageCountsJson);
 error_log("Attempting to insert order: Service=$service, Files=" . count($uploadedFiles) . ", TotalPages=$totalPages, Price=$finalPrice");
 
 // Save to database with page count and final price
-$sql = "INSERT INTO printing_orders (user_id, full_name, contact_number, service, size, paper_type, color_type, quantity, page_count, price, image_path, special_instruction, page_counts, payment_method)
+$sql = "INSERT INTO printing_orders (user_id, full_name, contact_number, service, size, paper_type, color_type, quantity, page_count, price, image_path, special_instruction, page_counts, payment_method) 
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 $stmt = $conn->prepare($sql);
