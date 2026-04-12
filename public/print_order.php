@@ -275,9 +275,13 @@ if (isset($_FILES['images']) && !empty($_FILES['images']['name'][0])) {
                 
                 // Debug log
                 error_log("File: $fileName | Detected pages: $pageCount | Total so far: $totalPages");
-            } else {
-                error_log("Failed to move uploaded file to: $targetFile");
-            }
+           } else {
+            $error = error_get_last();
+            error_log("Failed to move uploaded file to: $targetFile. Error: " . print_r($error, true));
+            error_log("File exists in tmp: " . (file_exists($tmp_name) ? 'yes' : 'no'));
+            error_log("Upload dir exists: " . (file_exists($uploadDir) ? 'yes' : 'no'));
+            error_log("Upload dir writable: " . (is_writable($uploadDir) ? 'yes' : 'no'));
+        }
         } catch (Exception $e) {
             error_log("Exception during file processing: " . $e->getMessage());
             continue;
