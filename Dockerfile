@@ -44,3 +44,8 @@ RUN echo "error_log = /var/log/apache2/php_errors.log" >> /usr/local/etc/php/con
 RUN echo "memory_limit = 256M" >> /usr/local/etc/php/conf.d/memory.ini
 RUN echo "max_execution_time = 300" >> /usr/local/etc/php/conf.d/timeout.ini
 RUN echo "default_socket_timeout = 10" >> /usr/local/etc/php/conf.d/timeout.ini
+
+RUN mkdir -p /var/www/html/uploads/printing && \
+    mkdir -p /var/www/html/uploads/temp && \
+    chown -R www-data:www-data /var/www/html/uploads && \
+    chmod -R 755 /var/www/html/uploads
